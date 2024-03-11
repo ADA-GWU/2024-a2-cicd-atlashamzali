@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TrendyolTestCases {
 
@@ -11,8 +12,12 @@ public class TrendyolTestCases {
         // Set the path to the ChromeDriver executable
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\ATLAS\\Desktop\\chromedriver-win64");
 
-        // Initialize ChromeDriver
-        WebDriver driver = new ChromeDriver();
+        // Initialize ChromeOptions
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=false"); // Disable headless mode
+
+        // Pass ChromeOptions when initializing ChromeDriver
+        WebDriver driver = new ChromeDriver(options);
 
         // Test Case 1: Login Functionality
         testLogin(driver);
@@ -30,7 +35,7 @@ public class TrendyolTestCases {
     // Test Case 1: Login Functionality
     private static void testLogin(WebDriver driver) {
         // Open the Trendyol website
-        driver.get("https://www.trendyol.com/");
+        driver.get("https://www.trendyol.com/giris?cb=%2F");
 
         // Click on the login button
         WebElement loginButton = driver.findElement(By.cssSelector(".account-button"));
@@ -38,10 +43,10 @@ public class TrendyolTestCases {
 
         // Enter username and password
         WebElement usernameField = driver.findElement(By.id("email"));
-        usernameField.sendKeys("your_username");
+        usernameField.sendKeys("Atlas Hamzali");
 
         WebElement passwordField = driver.findElement(By.id("password"));
-        passwordField.sendKeys("your_password");
+        passwordField.sendKeys("atlas2024");
 
         // Click on the login button
         WebElement submitButton = driver.findElement(By.cssSelector(".submit"));
@@ -58,7 +63,7 @@ public class TrendyolTestCases {
 
         // Enter the product name in the search box
         WebElement searchBox = driver.findElement(By.cssSelector(".search-box"));
-        searchBox.sendKeys("your_product_name");
+        searchBox.sendKeys("Kozmetik");
 
         // Click on the search button
         WebElement searchButton = driver.findElement(By.cssSelector(".search-icon"));
