@@ -50,6 +50,22 @@
 <p>By following these steps meticulously, you will be able to set up the project, verify its functionality, and execute comprehensive testing procedures to ensure its robustness and reliability.</p>
 
 <h2>Code Explanation:</h2>
+<h2>Unit Testing<h2>
+<h2>Code:</h2>
+
+<pre><code>
+@Test
+void testGetTotalCredits() {
+    Student student = new Student();
+    Course course1 = new Course();
+    course1.setCredits(3);
+    Course course2 = new Course();
+    course2.setCredits(4);
+    student.setCourses(Arrays.asList(course1, course2));
+    int totalCredits = student.getTotalCredits();
+    assertEquals(7, totalCredits);
+}
+</code></pre>
 
 <p>The provided code is a test case written in Java using JUnit, a testing framework. It aims to verify the correctness of the <code>getTotalCredits()</code> method in the <code>Student</code> class.</p>
 
