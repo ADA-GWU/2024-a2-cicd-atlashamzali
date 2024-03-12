@@ -22,6 +22,19 @@
     Open your preferred code editor and import the project.<br>
     Locate the file <code>src\main\java\ada\edu\demo\webtest\JpademoApplication.java</code> within the project structure.</p>
   </li>
+  <p>After opening the project in your code editor, follow these steps to build the project using Maven:</p>
+
+<ol>
+  <li><strong>Open Terminal:</strong></li>
+  <p>Open the terminal/command prompt on your system.</p>
+
+  <li><strong>Navigate to Project Directory:</strong></li>
+  <p>Use the <code>cd</code> command to navigate to the directory containing the project.</p>
+
+  <li><strong>Run Maven Command:</strong></li>
+  <p>Write the following command and press Enter:</p>
+  <pre><code>mvn clean</code></pre>
+</ol>
 
   <li><strong>Run the Project:</strong>
     <p>Inside your code editor, navigate to the mentioned Java file.<br>
