@@ -49,6 +49,22 @@
 
 <p>By following these steps meticulously, you will be able to set up the project, verify its functionality, and execute comprehensive testing procedures to ensure its robustness and reliability.</p>
 
+<h2>Code Explanation:</h2>
+
+<p>The provided code is a test case written in Java using JUnit, a testing framework. It aims to verify the correctness of the <code>getTotalCredits()</code> method in the <code>Student</code> class.</p>
+
+<h3>Steps:</h3>
+
+<ol>
+  <li>Create a new <code>Student</code> object.</li>
+  <li>Create two <code>Course</code> objects, each with a specific number of credits.</li>
+  <li>Add these courses to the student's list of courses.</li>
+  <li>Calculate the total credits using the <code>getTotalCredits()</code> method of the <code>Student</code> class.</li>
+  <li>Verify that the total credits calculated match the expected value (7 in this case).</li>
+</ol>
+
+<p>This test ensures that the <code>getTotalCredits()</code> method correctly sums up the credits of all courses associated with a student.</p>
+
 </body>
 </html>
 
