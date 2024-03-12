@@ -50,7 +50,7 @@
 <p>By following these steps meticulously, you will be able to set up the project, verify its functionality, and execute comprehensive testing procedures to ensure its robustness and reliability.</p>
 
 <h2>Code Explanation:</h2>
-<h2>Unit Testing<h2>
+<h2>Unit Test<h2>
 <h2>Code:</h2>
 
 <pre><code>
@@ -80,6 +80,63 @@ void testGetTotalCredits() {
 </ol>
 
 <p>This test ensures that the <code>getTotalCredits()</code> method correctly sums up the credits of all courses associated with a student.</p>
+
+<h2>Functionality Test</h2>
+<h2>Code:</h2>
+
+<pre><code>
+@Test
+@DisplayName("Test finding student by ID")
+public void testFindStudentById() {
+
+    // Set up
+    int studentId = 1;
+    Student mockedStudent = new Student();
+    mockedStudent.setStudentId(studentId);
+    mockedStudent.setFirstName("Atlas");
+    mockedStudent.setLastName("Hamzali");
+    when(studentRepository.findById(studentId)).thenReturn(Optional.of(mockedStudent));
+
+    // Execution
+    Optional<Student> result = studentRepository.findById(studentId);
+
+    // Assertion
+    assertNotNull(result);
+    assertEquals(studentId, result.get().getStudentId());
+    assertEquals("Atlas", result.get().getFirstName());
+    assertEquals("Hamzali", result.get().getLastName());
+}
+</code></pre>
+
+<h2>Explanation:</h2>
+
+<p>This code is a JUnit test case that verifies finding a student by their ID in the application.</p>
+
+<p><strong>Steps:</strong></p>
+
+<ol>
+  <li><strong>Setup:</strong> 
+    <ul>
+      <li>Initialize variables like student ID and a mocked student object with relevant data.</li>
+      <li>Mock the behavior of the <code>findById()</code> method to return the mocked student when called with the specified ID.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Execution:</strong> 
+    <ul>
+      <li>Invoke the <code>findById()</code> method with the student ID to retrieve the student.</li>
+    </ul>
+  </li>
+  
+  <li><strong>Assertion:</strong> 
+    <ul>
+      <li>Ensure that the returned student object is not null.</li>
+      <li>Check if the attributes of the returned student match the expected values.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This test confirms that the application correctly retrieves a student by their ID from the repository and that the student's attributes match the expected values.</p>
 
 </body>
 </html>
